@@ -3,6 +3,8 @@ const sliderContainer = document.querySelector(".slider-container");
 const sliderContainerWidth = sliderContainer.offsetWidth;
 const slides = document.querySelectorAll(".slide");
 let itemPerSlide = 0;
+let currentSlide = 0;
+let autoSlide = 0;
 let slideDots;
 const responsive = [
   { breakPoint: { width: 0, item: 1 } },
@@ -34,9 +36,6 @@ function start() {
     document.querySelector(".slide-controls").appendChild(div);
   }
 }
-
-let currentSlide = 0;
-let autoSlide = 0;
 function controlSlide(element) {
   currentSlide = element.id;
   changeSlide(currentSlide);
@@ -72,5 +71,5 @@ function changeSlide() {
     sliderContainer.style.transform = "translateX(-600%)";
   }
 }
-
+// The Event
 window.onload = load();
